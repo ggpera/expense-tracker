@@ -1,0 +1,193 @@
+openapi: 3.0.3
+info:
+  title: Final Project - OpenAPI 3.0
+  description: An API for expense tracking.
+  version: 1.0.11
+servers:
+  - url: https://final-project-ggpera.onrender.com/api/
+paths:
+  /expenses:
+    get:
+      description: Returns an array of expenses
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Expense'
+        '500':
+          $ref: '#/components/responses/500Error'
+    post:
+      description: Creates a new expense
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      responses:
+        '201':
+          description: Created succesfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '400':
+          $ref: '#/components/responses/400Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+    put:
+      description: Updates an existing expense
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Expense'
+      responses:
+        '200':
+          description: Updated succesfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '400':
+          $ref: '#/components/responses/400Error'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /expenses/{id}:
+    get:
+      description: Get information about a specific expense
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned an expense
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Expense'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+    delete:
+      description: Delete a specific expense
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Expense deleted
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: Expense deleted
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+  /expenses/month/{i}:
+    get:
+      description: Get expenses of a specific month
+      parameters:
+        - name: i
+          in: path
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Successfully returned expenses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Expense'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+  /expenses/filter:
+    get:
+      description: Get expenses of a specific category
+      parameters:
+        - name: category
+          in: query
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successfully returned expenses
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Expense'
+        '404':
+          $ref: '#/components/responses/404Error'
+        '500':
+          $ref: '#/components/responses/500Error'
+
+components:
+  schemas:
+    Expense:
+      type: object
+      properties:
+        id:
+          type: integer
+          example: 5
+        date:
+          type: string
+          example: '2022-01-09'
+        amount:
+          type: number
+          example: 12.34
+        category:
+          type: string
+          example: 'Ruoka'
+        shop:
+          type: string
+          example: 'Lidl'
+
+  responses:
+    400Error:
+      description: Invalid request
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Invalid value
+    404Error:
+      description: Not found
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Not found
+    500Error:
+      description: Internal server error
+      content:
+        text/plain:
+          schema:
+            type: string
+            example: Internal server error

@@ -1,0 +1,17 @@
+{
+  "sqltools.connections": [
+    {
+      "mysqlOptions": {
+        "authProtocol": "default"
+      },
+      "previewLimit": 50,
+      "server": "mydb.tamk.fi",
+      "port": 3306,
+      "driver": "MySQL",
+      "name": "db",
+      "database": "dbggpera1",
+      "username": "ggpera",
+      "password": "p6M0k8pM"
+    }
+  ]
+}

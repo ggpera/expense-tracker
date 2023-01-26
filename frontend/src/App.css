@@ -1,0 +1,15 @@
+ul {
+  list-style-type: decimal;
+}
+
+li {
+  margin-bottom: 1rem;
+}
+
+h1 {
+  margin-left: 1rem;
+}
+
+.form {
+  margin-left: 1rem;
+}

@@ -1,0 +1,31 @@
+GET https://final-project-ggpera.onrender.com/api/expenses
+###
+GET https://final-project-ggpera.onrender.com/api/expenses/1
+###
+GET https://final-project-ggpera.onrender.com/api/expenses/month/12
+###
+GET https://final-project-ggpera.onrender.com/api/expenses?category=Ruoka
+### 
+POST https://final-project-ggpera.onrender.com/api/expenses/api/expenses HTTP/1.1
+content-type: application/json
+
+{
+  "date": "2022-04-02",
+  "amount": 100.00,
+  "category": "Ruoka",
+  "shop": "K-Market"
+}
+###
+PUT https://final-project-ggpera.onrender.com/api/expenses HTTP/1.1
+content-type: application/json
+
+{
+  "id": 1000,
+  "date": "2022-01-02",
+  "amount": 43.21,
+  "category": "Ruoka",
+  "shop": "K-Market"
+}
+###
+DELETE https://final-project-ggpera.onrender.com/api/expenses HTTP/1.1
+###
