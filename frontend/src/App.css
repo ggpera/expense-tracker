@@ -1,15 +1,53 @@
+body {
+  margin: 0;
+  padding-bottom: 5rem;
+  background-color: black;
+  background-image: url('media/goodbye1.png');
+  background-repeat: no-repeat;
+  background-position: right;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+}
 ul {
-  list-style-type: decimal;
+  width: 25%;
+  margin-left: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  list-style-type: decimal-leading-zero;
+  background-color: aquamarine;
 }
 
 li {
-  margin-bottom: 1rem;
+  margin: 1rem 2rem 1rem 2rem;
+  font-weight: bold;
+  width: 15rem;
 }
 
 h1 {
-  margin-left: 1rem;
+  margin-left: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: aquamarine;
 }
 
 .form {
-  margin-left: 1rem;
+  width: 25%;
+  margin-left: 5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: aquamarine;
+}
+
+.inputs {
+  text-align: center;
+}
+
+Button {
+  background-color: red;
+}
+input {
+  width: 20rem;
+  height: 1rem;
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
 }

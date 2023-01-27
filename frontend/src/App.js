@@ -1,5 +1,7 @@
 import './App.css';
 import React, { useEffect, useState, useRef } from 'react';
+import Button from '@mui/material/Button';
+
 const App = () => {
   const expDate = useRef(null);
   const expAmount = useRef(null);
@@ -87,16 +89,26 @@ const App = () => {
             <br />
             {formatDate(exp.date)}
             <br />
-            <button onClick={() => handleDelete(exp.id)}>Poista</button>
+            <Button variant='contained' onClick={() => handleDelete(exp.id)}>
+              Poista
+            </Button>
           </li>
         ))}
       </ul>
       <div className='form'>
-        <input type='text' ref={expCategory} placeholder='Kategoria' />
-        <input type='text' ref={expShop} placeholder='Kauppa' />
-        <input type='number' ref={expAmount} placeholder='Summa' />
-        <input type='date' ref={expDate} placeholder='pp-kk-vvvv' />
-        <button onClick={handleClick}>Lisää kulu</button>
+        <div className='inputs'>
+          <input type='text' ref={expCategory} placeholder='Kategoria' />
+          <br />
+          <input type='text' ref={expShop} placeholder='Kauppa' />
+          <br />
+          <input type='number' ref={expAmount} placeholder='Summa' />
+          <br />
+          <input type='date' ref={expDate} placeholder='pp-kk-vvvv' />
+          <br />
+          <Button variant='contained' onClick={handleClick}>
+            Lisää kulu
+          </Button>
+        </div>
       </div>
     </div>
   );
