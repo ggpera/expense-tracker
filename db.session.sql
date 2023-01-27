@@ -10,5 +10,6 @@ CREATE TABLE IF NOT EXISTS `expenses` (
 INSERT INTO `expenses` (`date`, `amount`, `category`, `shop`) VALUES ('2022-12-21', 100.00, "Ruoka", "Prisma");
 INSERT INTO `expenses` (`date`, `amount`, `category`, `shop`) VALUES ('2022-12-22', 220.45, "Bensa", "Neste");
 INSERT INTO `expenses` (`date`, `amount`, `category`, `shop`) VALUES ('2022-12-22', 4.99, "Suoratoisto", "Tidal");
+INSERT INTO `expenses` (`date`, `amount`, `category`, `shop`) VALUES ('2022-12-24', 10.00, "Ruoka", "K-Market");
 
 ALTER TABLE expenses AUTO_INCREMENT = 0;

@@ -7,7 +7,7 @@ const App = () => {
   const expCategory = useRef(null);
 
   const [expenses, setExpenses] = useState([]);
-  // Fetch data from API 
+  // Fetch data from API
   useEffect(() => {
     const fetchExpenses = async () => {
       try {
@@ -49,7 +49,28 @@ const App = () => {
         const data = await res.json();
         setExpenses([...expenses, data]);
       }
-    } catch (err) {}
+    } catch (err) {
+      console.log(err);
+    }
+  };
+  const handleDelete = async (id) => {
+    try {
+      const res = await fetch(
+        `${process.env.REACT_APP_BACKEND}/api/expenses/${id}`,
+        {
+          method: 'delete',
+        },
+      );
+      if (res.status === 200) {
+        console.log('Deleted successfully');
+        const remainingExpenses = expenses.filter(
+          (expense) => expense.id !== id,
+        );
+        setExpenses(remainingExpenses);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
   // Format date with local standard
   const formatDate = (date) => {
@@ -65,6 +86,8 @@ const App = () => {
             {exp.category}: {exp.shop} {exp.amount}e
             <br />
             {formatDate(exp.date)}
+            <br />
+            <button onClick={() => handleDelete(exp.id)}>Poista</button>
           </li>
         ))}
       </ul>
