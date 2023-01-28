@@ -81,33 +81,41 @@ const App = () => {
   };
   return (
     <div>
-      <h1>Menojen seuranta</h1>
-      <ul>
-        {expenses.map((exp) => (
-          <li key={exp.id}>
-            {exp.category}: {exp.shop} {exp.amount}e
+      <h1>Expense Tracker</h1>
+      <div className='flex-container'>
+        <div className='list'>
+          <ul>
+            {expenses.map((exp) => (
+              <li key={exp.id}>
+                {exp.category}: {exp.shop} {exp.amount}e
+                <br />
+                {formatDate(exp.date)}
+                <br />
+                <Button
+                  variant='contained'
+                  onClick={() => handleDelete(exp.id)}
+                >
+                  Remove
+                </Button>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className='form'>
+          <div className='inputs'>
+            <h2>Add expense</h2>
+            <input type='text' ref={expCategory} placeholder='Category' />
             <br />
-            {formatDate(exp.date)}
+            <input type='text' ref={expShop} placeholder='Shop' />
             <br />
-            <Button variant='contained' onClick={() => handleDelete(exp.id)}>
-              Poista
+            <input type='number' ref={expAmount} placeholder='Cost' />
+            <br />
+            <input type='date' ref={expDate} placeholder='dd-mm-yyy' />
+            <br />
+            <Button variant='contained' onClick={handleClick}>
+              Add
             </Button>
-          </li>
-        ))}
-      </ul>
-      <div className='form'>
-        <div className='inputs'>
-          <input type='text' ref={expCategory} placeholder='Kategoria' />
-          <br />
-          <input type='text' ref={expShop} placeholder='Kauppa' />
-          <br />
-          <input type='number' ref={expAmount} placeholder='Summa' />
-          <br />
-          <input type='date' ref={expDate} placeholder='pp-kk-vvvv' />
-          <br />
-          <Button variant='contained' onClick={handleClick}>
-            Lisää kulu
-          </Button>
+          </div>
         </div>
       </div>
     </div>

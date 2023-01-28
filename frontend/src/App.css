@@ -1,53 +1,69 @@
+* {
+  box-sizing: border-box;
+  scrollbar-color: thistle lavenderblush;
+  scrollbar-width: thin;
+}
 body {
-  margin: 0;
+  margin: 4rem 0 0 0;
   padding-bottom: 5rem;
-  background-color: black;
+  background-color: lavenderblush;
   background-image: url('media/goodbye1.png');
   background-repeat: no-repeat;
-  background-position: right;
+  background-position: center;
   font-family: 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: center;
+}
+
 ul {
-  width: 25%;
-  margin-left: 5rem;
-  padding: 1rem;
-  border-radius: 0.5rem;
+  margin-top: 1rem;
   list-style-type: decimal-leading-zero;
-  background-color: aquamarine;
 }
 
 li {
-  margin: 1rem 2rem 1rem 2rem;
+  margin: 1rem auto 1rem auto;
   font-weight: bold;
-  width: 15rem;
 }
 
 h1 {
-  margin-left: 5rem;
+  margin-top: 0;
+  padding: 1rem;
+  text-align: center;
+  text-decoration: line-through aquamarine;
+}
+h2 {
+  margin-top: 1rem;
+}
+.list {
+  width: 25%;
+  height: 26rem;
+  overflow: hidden;
+  overflow-y: scroll;
   padding: 1rem;
   border-radius: 0.5rem;
   background-color: aquamarine;
+  opacity: 95%;
 }
-
 .form {
   width: 25%;
-  margin-left: 5rem;
   padding: 1rem;
-  border-radius: 0.5rem;
-  background-color: aquamarine;
+  border-radius: 0 0.5rem 0.5rem 0;
+  background-color: lavender;
+  opacity: 95%;
 }
 
 .inputs {
   text-align: center;
 }
 
-Button {
-  background-color: red;
-}
 input {
-  width: 20rem;
-  height: 1rem;
+  width: 85%;
+  height: 3rem;
   padding: 0.5rem;
-  margin-bottom: 0.5rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
 }
