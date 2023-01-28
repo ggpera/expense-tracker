@@ -1,10 +1,10 @@
 openapi: 3.0.3
 info:
-  title: Final Project - OpenAPI 3.0
+  title: xtracker - OpenAPI 3.0
   description: An API for expense tracking.
   version: 1.0.11
 servers:
-  - url: https://final-project-ggpera.onrender.com/api/
+  - url: https://xtracker.onrender.com/api/
 paths:
   /expenses:
     get:

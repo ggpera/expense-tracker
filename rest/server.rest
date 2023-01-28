@@ -1,12 +1,12 @@
-GET https://final-project-ggpera.onrender.com/api/expenses
+GET https://xtracker.onrender.com/api/expenses
 ###
-GET https://final-project-ggpera.onrender.com/api/expenses/1
+GET https://xtracker.onrender.com/api/expenses/1
 ###
-GET https://final-project-ggpera.onrender.com/api/expenses/month/12
+GET https://xtracker.onrender.com/api/expenses/month/12
 ###
-GET https://final-project-ggpera.onrender.com/api/expenses?category=Ruoka
+GET https://xtracker.onrender.com/api/expenses?category=Ruoka
 ### 
-POST https://final-project-ggpera.onrender.com/api/expenses/api/expenses HTTP/1.1
+POST https://xtracker.onrender.com/api/expenses/api/expenses HTTP/1.1
 content-type: application/json
 
 {
@@ -16,7 +16,7 @@ content-type: application/json
   "shop": "K-Market"
 }
 ###
-PUT https://final-project-ggpera.onrender.com/api/expenses HTTP/1.1
+PUT https://xtracker.onrender.com/api/expenses HTTP/1.1
 content-type: application/json
 
 {
@@ -27,5 +27,5 @@ content-type: application/json
   "shop": "K-Market"
 }
 ###
-DELETE https://final-project-ggpera.onrender.com/api/expenses HTTP/1.1
+DELETE https://xtracker.onrender.com/api/expenses HTTP/1.1
 ###
