@@ -1,4 +1,4 @@
-## Frontend server address
+## Render address (might take a while to load)
 
 https://xtracker.onrender.com/
 
