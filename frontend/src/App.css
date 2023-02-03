@@ -67,3 +67,33 @@ input {
   border-radius: 0.5rem;
   margin-bottom: 1rem;
 }
+@media only screen and (max-width: 600px) {
+  * {
+    box-sizing: border-box;
+    scrollbar-color: thistle aquamarine;
+    scrollbar-width: thin;
+  }
+  body {
+    margin: 0;
+    padding-bottom: 1rem;
+    background-size: 85%;
+    background-position-x: center;
+    background-position-y: 25%;
+  }
+  .flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .list {
+    width: 95%;
+    border-radius: 0;
+    text-align: center;
+  }
+  .form {
+    width: 95%;
+    border-radius: 0;
+  }
+}
